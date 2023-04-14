@@ -14,7 +14,7 @@ services:
       - DB_NAME=notes_db
       - PORT=3000
     restart: on-failure
-    command: ["npm", "start"]
+    command: ["npm", "run", "dev"]
 
   db:
     container_name: notes_db
