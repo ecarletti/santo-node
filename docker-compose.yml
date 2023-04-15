@@ -1,20 +1,22 @@
 version: "3.8"
 services:
-  app:
-    container_name: notes_app
-    build: .
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-    environment:
-      - DB_HOST=db
-      - DB_USER=postgres
-      - DB_PASSWORD=your_password
-      - DB_NAME=notes_db
-      - PORT=3000
-    restart: on-failure
-    command: ["npm", "run", "dev"]
+  # app:
+  #   container_name: notes_app
+  #   build: .
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     - DB_HOST=db
+  #     - DB_USER=postgres
+  #     - DB_PASSWORD=your_password
+  #     - DB_NAME=notes_db
+  #     - PORT=3000
+  #   restart: on-failure
+  #   command: ["npm", "run", "dev"]
+  #   volumes:
+  #     - ./src:/app/src
 
   db:
     container_name: notes_db

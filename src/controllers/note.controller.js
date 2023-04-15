@@ -25,4 +25,14 @@ exports.create = async (req, res) => {
   }
 };
 
+exports.findAll = async (req, res) => {
+  try {
+    console.log("Retrieving notes");
+    const notes = await Note.findAll();
+    console.log("All notes:", JSON.stringify(notes, null, 2));
+    res.status(201).send(notes);
+  }
+  catch (error) { res.status(500).send({ message: error.message || "Error occurred while retrieving notes" }); }
+};
+
 // ... otras funciones CRUD (findAll, findOne, update, delete)
